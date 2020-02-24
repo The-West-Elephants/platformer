@@ -1,0 +1,12 @@
+0.5,0.6,0.8
+d=0.4,0.3,0.3
+h=0,0.3,0
+                   ccccccc
+                   ccccccc
+                   ccccncc
+     hhhhhh        ccccccc                                d
+    hh    hh                                     e
+   hh     hhh                     hhhhhhhh       dd
+  hh      hhhh         e          hhhhhhhhh
+ppp       hhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhh                 h
+hhh       hhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhh          dd    hhh
