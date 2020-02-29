@@ -1,8 +1,10 @@
+# Import package
 from OpenGL.GL import *
 
 
 class NetEnemy:
     def __init__(self, x, y, width, height, image):
+        # Define variables
         self.start_image = image
         self.image = 0
         self.direction = -1
@@ -10,8 +12,10 @@ class NetEnemy:
         self.walkForward = 0.005
         self.walkCount = 0
         self.climbType = "front"
+        self.health = 10
 
     def draw(self):
+        # Draw climber
         if self.climbType == "front":
             self.image = 2
         else:
@@ -34,9 +38,12 @@ class NetEnemy:
         glTranslate(-self.rect["x"], -self.rect["y"], 0)
         glDisable(GL_TEXTURE_2D)
 
-    def update(self, net):
+    def update(self, net, stones):
+        # Move
         self.rect["x"] += self.walkForward * self.direction
         self.walkCount += 1
+
+        # Change direction
         if not self.touchblocks(net):
             self.direction *= -1
             self.rect["x"] += self.walkForward * self.direction
@@ -45,13 +52,20 @@ class NetEnemy:
             else:
                 self.climbType = "front"
 
+        # Die when touch stone
+        for stone in stones:
+            if self.touchblock(stone) and stone.throwing and self.climbType == "front":
+                self.health = 0
+
     def touchblock(self, tile):
+        # Check for touch an object
         if (tile.rect["x"] < self.rect["x"] + 0.02 < tile.rect["x"] + tile.rect["width"]) or (self.rect["x"] < tile.rect["x"] + 0.02 < self.rect["x"] + self.rect["width"]) or (self.rect["x"] == tile.rect["x"]):
-            if self.rect["y"] == tile.rect["y"] + tile.rect["height"] or self.rect["y"] == tile.rect["y"]:
+            if (tile.rect["y"] < self.rect["y"] < tile.rect["y"] + tile.rect["height"]) or (self.rect["y"] < tile.rect["y"] < self.rect["y"] + self.rect["height"]) or self.rect["y"] == tile.rect["y"] or self.rect["y"] == tile.rect["y"] + tile.rect["height"]:
                 return True
         return False
 
     def touchblocks(self, tiles):
+        # Find directions that climber touch
         touchtiles = []
         touches = []
         for tile in tiles:

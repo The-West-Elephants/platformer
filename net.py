@@ -1,12 +1,15 @@
+# Import package
 from OpenGL.GL import *
 
 
 class Net:
     def __init__(self, x, y, width, height, image_index):
+        # Define variables
         self.image_index = image_index
         self.rect = {"x": x, "y": y, "width": width, "height": height}
 
     def draw(self):
+        # Draw net
         glBindTexture(GL_TEXTURE_2D, self.image_index)
         glEnable(GL_TEXTURE_2D)
         glTranslate(self.rect["x"], self.rect["y"], 0)
