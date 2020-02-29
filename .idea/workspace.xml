@@ -2,22 +2,7 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="7565befb-870b-41ec-b114-240e375b8610" name="Default Changelist" comment="">
-      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/enemy.py" beforeDir="false" afterPath="$PROJECT_DIR$/enemy.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/images/char11.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/images/char12.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/images/char13.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/images/char14.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/images/char15.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/images/char16.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/levels/first.txt" beforeDir="false" afterPath="$PROJECT_DIR$/levels/first.txt" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/load_map.py" beforeDir="false" afterPath="$PROJECT_DIR$/load_map.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/net.py" beforeDir="false" afterPath="$PROJECT_DIR$/net.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/net_enemy.py" beforeDir="false" afterPath="$PROJECT_DIR$/net_enemy.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/player.py" beforeDir="false" afterPath="$PROJECT_DIR$/player.py" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/run.py" beforeDir="false" afterPath="$PROJECT_DIR$/run.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/stone.py" beforeDir="false" afterPath="$PROJECT_DIR$/stone.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/tile.py" beforeDir="false" afterPath="$PROJECT_DIR$/tile.py" afterDir="false" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
@@ -27,11 +12,11 @@
   </component>
   <component name="FileEditorManager">
     <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
-      <file pinned="false" current-in-tab="false">
+      <file pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/run.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="-1699">
-              <caret line="46" selection-start-line="46" selection-end-line="46" />
+            <state relative-caret-position="296">
+              <caret line="186" column="64" lean-forward="true" selection-start-line="186" selection-start-column="64" selection-end-line="186" selection-end-column="64" />
               <folding>
                 <element signature="e#0#29#0" expanded="true" />
               </folding>
@@ -51,7 +36,7 @@
           </provider>
         </entry>
       </file>
-      <file pinned="false" current-in-tab="true">
+      <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/player.py">
           <provider selected="true" editor-type-id="text-editor">
             <state relative-caret-position="40">
@@ -125,7 +110,6 @@
   </component>
   <component name="FindInProjectRecents">
     <findStrings>
-      <find>- scroll[</find>
       <find>DISTANCE</find>
       <find>rect</find>
       <find>0.2</find>
@@ -155,6 +139,7 @@
       <find>enemies</find>
       <find>c</find>
       <find>x</find>
+      <find>net</find>
     </findStrings>
     <replaceStrings>
       <replace>player1</replace>
@@ -186,6 +171,7 @@
       <replace>move_keys</replace>
       <replace>image</replace>
       <replace>n</replace>
+      <replace>stone</replace>
     </replaceStrings>
   </component>
   <component name="Git.Settings">
@@ -198,7 +184,6 @@
         <option value="$USER_HOME$/Downloads/bil.py" />
         <option value="$PROJECT_DIR$/climb.py" />
         <option value="$PROJECT_DIR$/levels/first.txt" />
-        <option value="$PROJECT_DIR$/run.py" />
         <option value="$PROJECT_DIR$/load_map.py" />
         <option value="$PROJECT_DIR$/player.py" />
         <option value="$PROJECT_DIR$/stone.py" />
@@ -206,6 +191,7 @@
         <option value="$PROJECT_DIR$/net_enemy.py" />
         <option value="$PROJECT_DIR$/net.py" />
         <option value="$PROJECT_DIR$/tile.py" />
+        <option value="$PROJECT_DIR$/run.py" />
       </list>
     </option>
   </component>
@@ -425,16 +411,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/run.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="-1699">
-          <caret line="46" selection-start-line="46" selection-end-line="46" />
-          <folding>
-            <element signature="e#0#29#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/load_map.py">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="310">
@@ -449,6 +425,16 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="40">
           <caret line="196" column="31" lean-forward="true" selection-start-line="196" selection-start-column="31" selection-end-line="196" selection-end-column="31" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/run.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="296">
+          <caret line="186" column="64" lean-forward="true" selection-start-line="186" selection-start-column="64" selection-end-line="186" selection-end-column="64" />
+          <folding>
+            <element signature="e#0#29#0" expanded="true" />
+          </folding>
         </state>
       </provider>
     </entry>

@@ -188,6 +188,13 @@ glTexParameteri(GL_TEXTURE_2D, GL_TEXTURE_MIN_FILTER, GL_LINEAR)
 glTexParameteri(GL_TEXTURE_2D, GL_TEXTURE_MAG_FILTER, GL_LINEAR)
 glTexImage2D(GL_TEXTURE_2D, 0, GL_RGBA, net_img.size[0], net_img.size[1], 0, GL_RGBA, GL_FLOAT, np.array(net_img).reshape([net_img.size[0], net_img.size[1], 4]) / 256)
 
+# Load stone image
+stone_img = Image.open(stone_img).getdata()
+glBindTexture(GL_TEXTURE_2D, 7)
+glTexParameteri(GL_TEXTURE_2D, GL_TEXTURE_MIN_FILTER, GL_LINEAR)
+glTexParameteri(GL_TEXTURE_2D, GL_TEXTURE_MAG_FILTER, GL_LINEAR)
+glTexImage2D(GL_TEXTURE_2D, 0, GL_RGBA, stone_img.size[0], stone_img.size[1], 0, GL_RGBA, GL_FLOAT, np.array(stone_img).reshape([stone_img.size[0], stone_img.size[1], 4]) / 256)
+
 
 # Open window
 glutFullScreen()
