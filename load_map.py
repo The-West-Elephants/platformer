@@ -1,4 +1,5 @@
-# Import files
+# Import module/files
+from os import path
 from player import Player
 from stone import Stone
 from enemy import Enemy
@@ -14,11 +15,11 @@ CHAR_WIDTH = 0.1
 CHAR_HEIGHT = 0.2
 
 
-def load_map(path, move_keys, player_number):
+def load_map(file, move_keys, player_number):
     # Load map
 
     # Load background color
-    f = open("levels/" + path + ".txt", "r")
+    f = open(path.join("levels", file + ".txt"), "r")
     data = f.read()
     f.close()
     data = data.split("\n")
