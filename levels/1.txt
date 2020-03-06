@@ -1,0 +1,11 @@
+0.5,0.6,0.8
+h=0,0.3,0
+       nnnnnnnnncnnnn
+       nnnnnnnnnnnnnn
+       nnnnnncnnnnnnn
+       nnnnnnnnnnnnnn
+       nnncnnnnnnnnnn
+
+
+ p          w  w      s
+hhhhhhhhhhhhhhhhhhhhhhhhhhh

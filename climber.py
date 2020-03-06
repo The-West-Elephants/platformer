@@ -2,7 +2,7 @@
 from OpenGL.GL import *
 
 
-class NetEnemy:
+class Climber:
     def __init__(self, x, y, width, height, image):
         # Define variables
         self.start_image = image

@@ -2,7 +2,7 @@
 from OpenGL.GL import *
 
 
-class Enemy:
+class Walker:
     def __init__(self, x, y, width, height, image):
         # Define variables
         self.image = image

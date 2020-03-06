@@ -11,6 +11,8 @@ import numpy as np
 
 
 # Define variables
+# Set level number
+level = 2
 
 # Set number of players
 player_number = "1"
@@ -32,19 +34,19 @@ net_img = path.join("images", "net.png")
 stone_img = path.join("images", "stone.png")
 
 # Load screen
-tiles, net, stones, players, enemies, net_enemies, color = load_map("first", move_keys, player_number)
+tiles, net, stones, players, walkers, climbers, color = load_map(str(level), move_keys, player_number)
 for i in range(len(color)):
     color[i] = float(color[i])
 
 
 def main():
+    global level, tiles, net, stones, players, walkers, climbers, color
     # Clear screen
     glClearColor(color[0], color[1], color[2], 1)
     glClear(GL_COLOR_BUFFER_BIT)
     glLoadIdentity()
 
     # Draw screen
-
     # Set camera position
     for player in players:
         scroll[0] += player.rect["x"]
@@ -65,9 +67,9 @@ def main():
             players[i].draw()
 
     # Draw climbers behind net
-    for net_enemy in net_enemies:
-        if net_enemy.climbType == "behind":
-            net_enemy.draw()
+    for climber in climbers:
+        if climber.climbType == "behind":
+            climber.draw()
 
     # Draw net
     for string in net:
@@ -83,8 +85,8 @@ def main():
         try:
             if player.climbType == "front":
                 player.draw()
-            player.move(keys, tiles, net, net_enemies, stones, players)
-            player.update(tiles, net, players, enemies, net_enemies)
+            player.move(keys, tiles, net, climbers, stones, players)
+            player.update(tiles, net, players, walkers, climbers)
             if not player.health:
                 players.remove(player)
         except IndexError:
@@ -94,29 +96,40 @@ def main():
             exit()
 
     # Draw walkers and update walkers
-    for enemy in enemies:
+    for walker in walkers:
         try:
-            enemy.draw()
-            enemy.update(tiles, stones)
-            if not enemy.health:
-                enemies.remove(enemy)
+            walker.draw()
+            walker.update(tiles, stones)
+            if not walker.health:
+                walkers.remove(walker)
         except IndexError:
             pass
 
     # Draw climbers in front of net and update climbers
-    for net_enemy in net_enemies:
+    for climber in climbers:
         try:
-            if net_enemy.climbType == "front":
-                net_enemy.draw()
-            net_enemy.update(net, stones)
-            if not net_enemy.health:
-                net_enemies.remove(net_enemy)
+            if climber.climbType == "front":
+                climber.draw()
+            climber.update(net, stones)
+            if not climber.health:
+                climbers.remove(climber)
         except IndexError:
             pass
 
+    if not walkers and not climbers:
+        level += 1
+        try:
+            tiles, net, stones, players, walkers, climbers, color = load_map(str(level), move_keys, player_number)
+            for i in range(len(color)):
+                color[i] = float(color[i])
+        except FileNotFoundError:
+            print("You won!!")
+            glutDestroyWindow(window)
+            exit()
+
     # Show on screen
     glutSwapBuffers()
-    sleep(0.01)
+    sleep(0.02)
 
 
 def specialdown(key, x, y):

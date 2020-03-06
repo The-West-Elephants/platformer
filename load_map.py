@@ -2,8 +2,8 @@
 from os import path
 from player import Player
 from stone import Stone
-from enemy import Enemy
-from net_enemy import NetEnemy
+from walker import Walker
+from climber import Climber
 from net import Net
 from tile import Tile
 
@@ -36,8 +36,8 @@ def load_map(file, move_keys, player_number):
     # Initialize objects
     tiles = []
     net = []
-    enemies = []
-    net_enemies = []
+    walkers = []
+    climbers = []
     stones = []
     players = []
 
@@ -50,17 +50,17 @@ def load_map(file, move_keys, player_number):
                 tiles.append(Tile(x, y, TILE_WIDTH, TILE_HEIGHT, tile_chars[data[row][tile]]))
             elif data[row][tile] == "p" and len(players) < player_number:
                 players.append(Player(x, y, CHAR_WIDTH, CHAR_HEIGHT, 0, move_keys[len(players)]))
-            elif data[row][tile] == "e":
-                enemies.append(Enemy(x, y, CHAR_WIDTH, CHAR_HEIGHT, 0))
+            elif data[row][tile] == "w":
+                walkers.append(Walker(x, y, CHAR_WIDTH, CHAR_HEIGHT, 0))
             elif data[row][tile] == "n":
                 net.append(Net(x, y, TILE_WIDTH, TILE_HEIGHT, 6))
             elif data[row][tile] == "c":
                 net.append(Net(x, y, TILE_WIDTH, TILE_HEIGHT, 6))
-                net_enemies.append(NetEnemy(x, y, CHAR_WIDTH, CHAR_HEIGHT, 0))
+                climbers.append(Climber(x, y, CHAR_WIDTH, CHAR_HEIGHT, 0))
             elif data[row][tile] == "s":
                 stones.append(Stone(x, y, TILE_WIDTH, TILE_HEIGHT, 7))
             x += TILE_WIDTH
         y -= TILE_HEIGHT
 
     # Return objects
-    return tiles, net, stones, players, enemies, net_enemies, color
+    return tiles, net, stones, players, walkers, climbers, color

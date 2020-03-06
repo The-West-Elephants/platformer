@@ -1,0 +1,16 @@
+0.2,0.2,0.2
+h=0.1,0.1,0.1
+                              h      p
+                                     h
+                                            n
+
+                            h
+                                                        s
+                                  h                 hhhhh
+                                                h
+
+                                        h
+                h               n
+    w     h
+hhhhh                h              h
+                            h
