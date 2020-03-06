@@ -12,7 +12,7 @@ import numpy as np
 
 # Define variables
 # Set level number
-level = 2
+level = 1
 
 # Set number of players
 player_number = "1"
